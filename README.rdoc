@@ -1,0 +1,48 @@
+= Mongoid::Voteable
+
+Dead simple voting functionality for Mongoid models
+
+== Installation
+
+Add to Gemfile:
+  
+    gem 'mongoid_voteable'
+
+== Getting Started
+
+Include the module in models where you want it:
+
+    class Post
+      include Mongoid::Document
+      include Mongoid::Voteable
+      ...
+    end
+
+== Cast Votes
+
+You can vote by passing an integer and a voter model to the "vote" method:
+
+    @post = Post.first
+    @user = User.where(:name => 'Bill') # or more likely, current_user
+    
+    @post.vote 1, @user     # I like this!
+    @post.vote -1, @user    # I don't like this!
+
+Votes don't have to be up or down, they can include emphasis:
+
+    @post.vote 5, @user     # I LOVE this!
+    @post.vote -10, @user   # Delete it from the Interwebs
+
+== Additional Functionality
+
+You'll often want to know if a user can vote.  Simple:
+
+    @post.voted? @user      # True if they've voted
+
+You can also get a tally of the number of votes cast:
+
+    @post.vote_count        # Just one so far!
+
+You can get the average vote:
+
+    @post.vote_average      # votes / voters.count
