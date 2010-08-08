@@ -5,7 +5,7 @@ MODELS = File.join(File.dirname(__FILE__), "models")
 
 require "rubygems"
 require "mongoid"
-require "mongoid/voteable"
+require "mongoid_voteable"
 require "rspec"
 require "database_cleaner"
 

@@ -2,7 +2,7 @@ $LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
 
 require "active_support"
 require "mongoid"
-require "mongoid/voteable"
+require "mongoid_voteable"
 
 Gem::Specification.new do |s|
   s.name        = "mongoid_voteable"
@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency("rspec", [">= 2.0.0.beta.19"])
   s.add_development_dependency("database_cleaner", [">= 0.5.2"])
 
-  s.files = Dir.glob("lib/**/*") + ["README.rdoc"]
+  s.files = Dir.glob("lib/*") + ["README.rdoc"]
   s.require_path = "lib"
 
 end

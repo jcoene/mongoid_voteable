@@ -1,7 +1,7 @@
 module Mongoid
   module Voteable
 
-    VERSION = "0.1.0"
+    VERSION = "0.1.1"
 
     extend ActiveSupport::Concern
 

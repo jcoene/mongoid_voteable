@@ -3,7 +3,7 @@ $LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
 require 'rspec/core/rake_task'
 require "active_support"
 require "mongoid"
-require "mongoid/voteable"
+require "mongoid_voteable"
 
 task :default => :spec
 
